@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Aurum-Clinic/static/css/main.cd1535c7.css",
+    "main.js": "/Aurum-Clinic/static/js/main.1c625f70.js",
+    "static/js/453.ed3810f9.chunk.js": "/Aurum-Clinic/static/js/453.ed3810f9.chunk.js",
+    "index.html": "/Aurum-Clinic/index.html",
+    "main.cd1535c7.css.map": "/Aurum-Clinic/static/css/main.cd1535c7.css.map",
+    "main.1c625f70.js.map": "/Aurum-Clinic/static/js/main.1c625f70.js.map",
+    "453.ed3810f9.chunk.js.map": "/Aurum-Clinic/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd1535c7.css",
+    "static/js/main.1c625f70.js"
+  ]
+}
