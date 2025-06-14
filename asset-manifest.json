@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Aurum-Clinic/static/css/main.cd1535c7.css",
-    "main.js": "/Aurum-Clinic/static/js/main.2140367c.js",
+    "main.css": "/Aurum-Clinic/static/css/main.a21285f0.css",
+    "main.js": "/Aurum-Clinic/static/js/main.c03f2c98.js",
     "static/js/453.ed3810f9.chunk.js": "/Aurum-Clinic/static/js/453.ed3810f9.chunk.js",
     "index.html": "/Aurum-Clinic/index.html",
-    "main.cd1535c7.css.map": "/Aurum-Clinic/static/css/main.cd1535c7.css.map",
-    "main.2140367c.js.map": "/Aurum-Clinic/static/js/main.2140367c.js.map",
+    "main.a21285f0.css.map": "/Aurum-Clinic/static/css/main.a21285f0.css.map",
+    "main.c03f2c98.js.map": "/Aurum-Clinic/static/js/main.c03f2c98.js.map",
     "453.ed3810f9.chunk.js.map": "/Aurum-Clinic/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd1535c7.css",
-    "static/js/main.2140367c.js"
+    "static/css/main.a21285f0.css",
+    "static/js/main.c03f2c98.js"
   ]
 }
