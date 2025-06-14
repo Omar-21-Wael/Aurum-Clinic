@@ -261,7 +261,7 @@ useEffect(() => {
             <hr/>
             <div className={style.profile}> 
                <div className={style.imageWrapper}>
-                 <span className={style.name}><img src={ process.env.PUBLIC_URL +"/maledoc.jfif"} alt="Male Doctor" />
+                 <span className={style.name}><img src={ process.env.PUBLIC_URL +"/Maledoc.jfif"} alt="Male Doctor" />
                 <h3>Dr. Kareem Saleh
                 <p>Pediatrics</p>
                 </h3></span>
@@ -272,7 +272,7 @@ useEffect(() => {
             <hr/>
             <div className={style.profile}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/maledoc2.jfif"} alt="Male Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/Maledoc2.jfif"} alt="Male Cardiologist" />
                 <h3>Dr. John Doe
                 <p>Cardiologist</p>
                 </h3></span>
