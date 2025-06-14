@@ -83,6 +83,8 @@
 @media screen and (max-width: 768px){
   .logo{
     width: 99px;
+    top: -10px;
+    left: -4px;
   }
   .list{
     position: fixed;
@@ -98,9 +100,8 @@ z-index: 100;
   }
   .contactUs {
   position: fixed;
-  
-  right: 46px;
-  top: 16px;
+  right: 8px;
+  top: 8px;
 
 }
 .but {

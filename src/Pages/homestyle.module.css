@@ -569,13 +569,14 @@ button{
 }
 
 @media screen and (max-width: 768px) {
+  
   .container {
     width: 100%;
     display: grid;
     justify-content: center;
     align-items: center;
     margin: 0 16px  0  0;
-    padding: 40px 0;
+    padding: 40px 40px;
     overflow: hidden;
   }
 
@@ -591,7 +592,8 @@ button{
     margin: 0px 24px 24px 24px;
     width: 30%;
     
-  }
+  } 
+  
   .yourhealth{
     font-size: 32px;
 
@@ -662,9 +664,11 @@ button{
     align-items: center;
 
 }
-.Depart{
-width: 44%;
-height: 400px;
+.Depart {
+  width: 100%;
+  max-width: 360px;
+  height: auto; /* عشان يناسب أي محتوى */
+  margin-inline: auto;
 }
 .Depart h5{
     font-size: 18px;
@@ -691,10 +695,11 @@ height: 400px;
 
     flex-grow: 1;
 }
-.para{
-    text-wrap: wrap ;
-    width: 30%;
-    font-size: 13px;
+.para {
+  width: 100%;
+  max-width: 320px;
+  font-size: 13px;
+  margin-inline: auto;
 }
 .review {
   width: 18%;
@@ -764,11 +769,12 @@ position: relative;
   .contact h2 {
     font-size: 20px;
   }
-.koko{
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
+.koko {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px auto;
 }
 }
