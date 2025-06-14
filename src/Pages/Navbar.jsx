@@ -45,7 +45,7 @@ const Navbar = () => {
                 Home
               </NavLink>
               <NavLink
-                to="/about"
+                to="#"
                 style={({ isActive }) => ({
                   color: isActive ? '#2B2B2B' : '#FCFCFC',
                 })}
@@ -54,7 +54,7 @@ const Navbar = () => {
                 About
               </NavLink>
               <NavLink
-                to="/doctors"
+                to="#"
                 style={({ isActive }) => ({
                   color: isActive ? '#2B2B2B' : '#FCFCFC',
                 })}
@@ -63,7 +63,7 @@ const Navbar = () => {
                 Doctors
               </NavLink>
               <NavLink
-                to="/services"
+                to="#"
                 style={({ isActive }) => ({
                   color: isActive ? '#2B2B2B' : '#FCFCFC',
                 })}
@@ -72,7 +72,7 @@ const Navbar = () => {
                 Services
               </NavLink>
             </div>
-            <NavLink to="/contact" className={styles.contactUs}>
+            <NavLink to="#" className={styles.contactUs}>
               <button className={styles.but}>Contact Us</button>
             </NavLink>  
             </div>
@@ -85,7 +85,7 @@ const Navbar = () => {
             <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Logo" className={styles.logo} />
             <button className={styles.list}><PiListBold  size={22} color='white' />
 </button>
-    <NavLink to="/contact" className={styles.contactUs}>
+    <NavLink to="#" className={styles.contactUs}>
               <button className={styles.but}>Contact Us</button>
             </NavLink> 
       </div>

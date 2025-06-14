@@ -7,7 +7,7 @@ html, body {
 }
 .label {
 
-margin: 390px 46px 16px 0 ;
+margin: 290px 46px 16px 0 ;
 padding: 0;
 display: flex;
 width: 70%;
@@ -104,10 +104,10 @@ width: fit-content;
 .doctorImage::after {
   content: "";
   position: absolute;
-right: 4.5%;
-bottom: 10px;
-  width: 600px; 
-  height: 635px;
+right: 1.5%;
+bottom: 0px;
+  width: 524px; 
+  height: 550px;
   background-color: #A4EFFB;
   border-radius: 50%; 
   z-index: -1;
@@ -123,7 +123,6 @@ margin-top: 199px;
 }
 .slide p{
     font-family: poppins, sans-serif;
-    font-size: 20px;
     margin-bottom: 24px;
     font-weight: 500;
 }
@@ -392,6 +391,7 @@ object-position: 60% 10%;
     margin-top: 23px;
 }
 .para{
+  font-size: 16px;
     margin-top: 8px;
     font-weight: 500;
     color: #656565;
@@ -544,7 +544,7 @@ padding:20px ;
     font-family: poppins, sans-serif;
     position: relative;
   margin-top: 24px;
-  left: 800px;
+  left: 550px;
 transition: .3s;
 }
 .btn3:hover{
@@ -559,6 +559,13 @@ button{
 .parallax {
   transition: transform 0.3s ease-out;
   will-change: transform;
+}
+.koko{
+  display: flex;
+  flex-direction: column;
+}
+.trust{
+  font-size: 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -610,17 +617,17 @@ button{
     height: 10%;
     display: flex;
     justify-content: center;
-    background-color: #fcfcfc2b;
+    background-color:transparent;
  
 
 }
   .doctorImage::after {
     position: absolute;
-  
-    bottom: 30px ;
+  background-color: #affeff69;
+    bottom: 0px ;
     width: 424px;
     height: 410px;
-    right: 17.5%;
+    right: 60.5%;
   }
 
   .slide {
@@ -629,12 +636,14 @@ button{
   }
 
   .slide p{
-    font-size: 13px;
     margin-bottom: 16px;
   
 }
 .slider{
     height: 300px;
+}
+.trust{
+  font-size: 16px;
 }
 
 
@@ -685,6 +694,7 @@ height: 400px;
 .para{
     text-wrap: wrap ;
     width: 30%;
+    font-size: 13px;
 }
 .review {
   width: 18%;

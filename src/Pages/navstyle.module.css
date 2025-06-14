@@ -25,7 +25,7 @@
   position: absolute;
       font-family: 'Poppins', sans-serif;
 
-  top: 32px;
+  top: 24px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -35,7 +35,7 @@
 }
 
 .navItem {
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -44,7 +44,7 @@
   position: absolute;
   
   right: 46px;
-  top: 26px;
+  top: 20px;
   text-decoration: none;
       z-index: 100;
 
@@ -53,7 +53,7 @@
 
 .but {
     padding: 8px 14px;
-    font-size: 20px;
+    font-size:16px;
     font-family: 'Poppins', sans-serif;
     background-color: #fcfcfc;
     border-radius: 10px;
@@ -72,7 +72,7 @@
     top: -20px;
     left: -16px;
     z-index: 100;
-    width: 249px;
+    width: 190px;
 
 
 }

@@ -29,6 +29,7 @@ const [isMobile, setIsMobile] = useState(false);
 ];
 
 useEffect(() => {
+  if(isMobile) return;
   let frameId;
 
   const updateActiveImages = () => {
@@ -59,7 +60,7 @@ useEffect(() => {
 
   frameId = requestAnimationFrame(updateActiveImages);
   return () => cancelAnimationFrame(frameId);
-}, []);
+}, [isMobile]);
 
 useEffect(() => {
   const handleScroll = () => {    
@@ -98,7 +99,6 @@ useEffect(() => {
   return () => cancelAnimationFrame(animationId); // ← Clean-up تمام كده
 }, [isHovered]);
 useEffect(() => {
-  if (isMobile) return;
 
   const elements = document.querySelectorAll('.parallax');
   let animationFrameId;
@@ -211,7 +211,7 @@ useEffect(() => {
       
     </header>
     <section className={style.slide}>
-        <p>Trusted by <span className={style.span}>1K+</span> patients to feel better and live healthier</p>
+        <p className={style.trust}>Trusted by <span className={style.span}>1K+</span> patients to feel better and live healthier</p>
         <div className={style.slider}>
 
         
@@ -230,7 +230,7 @@ useEffect(() => {
           </div>
          <div className={style.Departments}>
             <h2>Departments Built on Trust</h2>
-            <p className={style.para}>From cardiology to dermatology, our expert teams deliver care that patients rely on — every day.</p>
+            <p className={style.para}>From cardiology to dermatology, our expert teams deliver care that patients rely on every day.</p>
             <section className={style.rate}>
             <div className={`${style.Depart} ${scrolled ? style.show : ''}`}> 
                 
