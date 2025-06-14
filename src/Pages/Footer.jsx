@@ -9,7 +9,7 @@ const Footer = () => {
         <img
 className={footer.logo}
 alt="logo"
-src={"/logo.png"}
+src={ process.env.PUBLIC_URL +"/logo.png"}
 />
     <div>
         

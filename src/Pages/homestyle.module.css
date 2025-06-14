@@ -556,10 +556,9 @@ transition: .3s;
 button{
     cursor: pointer;
 }
-.parallax{
-
-  will-change:auto;
-  transition: 0.1s linear;
+.parallax {
+  transition: transform 0.3s ease-out;
+  will-change: transform;
 }
 
 @media screen and (max-width: 768px) {

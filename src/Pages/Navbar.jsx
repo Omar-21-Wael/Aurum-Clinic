@@ -31,7 +31,7 @@ const Navbar = () => {
                 fill="#A4EFFB"
               />
             </svg>
-            <img src="/logo.png" alt="Logo" className={styles.logo} />
+            <img src= {process.env.PUBLIC_URL + "/logo.png"} alt="Logo" className={styles.logo} />
 
             {/* روابط التنقل */}
             <div className={styles.navLinks}>
@@ -82,7 +82,7 @@ const Navbar = () => {
       <svg width="113" height="85" viewBox="0 0 113 85" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 -1.52588e-05H113V40L75.5 85H0V-1.52588e-05Z" fill="#A4EFFB"/>
 </svg>
-            <img src="/logo.png" alt="Logo" className={styles.logo} />
+            <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Logo" className={styles.logo} />
             <button className={styles.list}><PiListBold  size={22} color='white' />
 </button>
     <NavLink to="/contact" className={styles.contactUs}>

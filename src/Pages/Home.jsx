@@ -16,15 +16,15 @@ const [activeMap, setActiveMap] = useState({});
 const [isMobile, setIsMobile] = useState(false);
 
   const images = [
-  '/logo2.png',
-  '/frame7.jfif',
-  '/frame4.jfif',
-  '/frame6.jfif',
-  '/frame3.jfif',
-  '/frame5.jfif',
-  '/frame2.jfif',
-  '/frame1.jfif',
-  '/logo2.png',
+   process.env.PUBLIC_URL +'/logo2.png',
+   process.env.PUBLIC_URL +'/frame7.jfif',
+   process.env.PUBLIC_URL +'/frame4.jfif',
+   process.env.PUBLIC_URL +'/frame6.jfif',
+   process.env.PUBLIC_URL +'/frame3.jfif',
+   process.env.PUBLIC_URL +'/frame5.jfif',
+   process.env.PUBLIC_URL +'/frame2.jfif',
+   process.env.PUBLIC_URL +'/frame1.jfif',
+   process.env.PUBLIC_URL +'/logo2.png',
  
 ];
 
@@ -98,25 +98,31 @@ useEffect(() => {
   return () => cancelAnimationFrame(animationId); // ← Clean-up تمام كده
 }, [isHovered]);
 useEffect(() => {
-
-if (isMobile) return;
+  if (isMobile) return;
 
   const elements = document.querySelectorAll('.parallax');
+  let animationFrameId;
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
 
-    elements.forEach((el) => {
-      const speed = parseFloat(el.dataset.speed) || 0.2;
-      el.style.transform = `translateY(${scrollY * speed}px)`;
+    // نستخدم requestAnimationFrame للسلاسة
+    animationFrameId = requestAnimationFrame(() => {
+      elements.forEach((el) => {
+        const speed = parseFloat(el.dataset.speed) || 0.2;
+        el.style.transform = `translateY(${-scrollY * speed}px)`;
+      });
     });
   };
 
   window.addEventListener('scroll', handleScroll);
 
-
-  return () => window.removeEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+    cancelAnimationFrame(animationFrameId); // نوقف أي frame شغالة
+  };
 }, [isMobile]);
+
 useEffect(() => {
   const checkMobile = () => setIsMobile(window.innerWidth <= 768);
   checkMobile();
@@ -128,11 +134,11 @@ useEffect(() => {
     <div className={style.container}>
     <header className={style.herosection}>
       <div className={style.label}>
-        <h1 className={`${style.yourhealth} parallax`} data-speed="-0.4">
+        <h1 className={`${style.yourhealth} parallax`} data-speed="-0.6">
           <span className={style.textwrapper}>Your Health </span>
           <span className={style.span}>Comes First</span>
         </h1>
-        <p className={`${style.content} parallax`} data-speed="-0.3">
+        <p className={`${style.content} parallax`} data-speed="-0.6">
           <span className={style.span}>Aurum Clinic </span>
           <span className={style.textwrapper}>
             offer comprehensive medical services with top doctors and the latest
@@ -140,7 +146,7 @@ useEffect(() => {
           </span>
         </p>
 
-        <div className={`${style.btnWrapper} parallax`} data-speed="-0.2">
+        <div className={`${style.btnWrapper} parallax`} data-speed="-0.6">
           <button
             className={style.btn}
             onMouseEnter={() => setIsHovered(true)}
@@ -193,14 +199,14 @@ useEffect(() => {
                 </filter>
               </defs>
             </svg>
-            <span className={`${style.btnText} parallax`} data-speed="-0.2">Book Now</span>
+            <span className={style.btnText}>Book Now</span>
           </button>
 
-          <button className={`${style.btn2} parallax`} data-speed="-0.2">contact us</button>
+          <button className={style.btn2} >contact us</button>
         </div>
       </div>
-      <div className={`${style.doctorImage}`} data-speed="-0.15">
-        <img src='/DOC.png'className="parallax" data-speed="-0.15" alt='doctor'  />
+      <div className={style.doctorImage}>
+        <img src={ process.env.PUBLIC_URL +'/DOC.png'}className="parallax" data-speed="-0.6" alt='doctor'  />
       </div>
       
     </header>
@@ -232,12 +238,12 @@ useEffect(() => {
                     Pediatrics 
               <span className={style.arrow}><IoIosArrowDown size={27}/></span>      
                 </h5><div className={style.line}>
-                <img src='/1.png' className={style.item}/>
-                <img src='/2.png' className={style.item}/>
-                <img src='/3.png'className={style.item}/>
-                <img src='/4.png'className={style.item}/>
-                <img src='/5.png'className={style.item}/>
-                <img src='/6.png'className={style.item}/>
+                <img src={ process.env.PUBLIC_URL +'/1.png'} className={style.item}/>
+                <img src={ process.env.PUBLIC_URL +'/2.png'} className={style.item}/>
+                <img src={ process.env.PUBLIC_URL +'/3.png'}className={style.item}/>
+                <img src={ process.env.PUBLIC_URL +'/4.png'}className={style.item}/>
+                <img src={ process.env.PUBLIC_URL +'/5.png'}className={style.item}/>
+                <img src={ process.env.PUBLIC_URL +'/6.png'}className={style.item}/>
                 </div>
                  </div>
          
@@ -245,7 +251,7 @@ useEffect(() => {
             <div className={style.profile}> 
              <div className={style.imageWrapper}> 
                 <span className={style.name}>
-                    <img src="femaledoc.jfif" alt="Female Doctor" />
+                    <img src={ process.env.PUBLIC_URL +"/femaledoc.jfif"} alt="Female Doctor" />
                 <h3>Dr. Amal Mohamed
                 <p>General Practitioner</p>
                 </h3></span>
@@ -255,7 +261,7 @@ useEffect(() => {
             <hr/>
             <div className={style.profile}> 
                <div className={style.imageWrapper}>
-                 <span className={style.name}><img src="maledoc.jfif" alt="Male Doctor" />
+                 <span className={style.name}><img src={ process.env.PUBLIC_URL +"/maledoc.jfif"} alt="Male Doctor" />
                 <h3>Dr. Kareem Saleh
                 <p>Pediatrics</p>
                 </h3></span>
@@ -266,7 +272,7 @@ useEffect(() => {
             <hr/>
             <div className={style.profile}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="maledoc2.jfif" alt="Male Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/maledoc2.jfif"} alt="Male Cardiologist" />
                 <h3>Dr. John Doe
                 <p>Cardiologist</p>
                 </h3></span>
@@ -277,7 +283,7 @@ useEffect(() => {
             <hr/>
             <div className={style.profile}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -298,7 +304,7 @@ useEffect(() => {
 
           <div className={style.review}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -310,7 +316,7 @@ useEffect(() => {
             </div>
                       <div className={style.review}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -323,7 +329,7 @@ useEffect(() => {
              <div
               className={style.review}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -336,7 +342,7 @@ useEffect(() => {
              <div
               className={style.review}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -349,7 +355,7 @@ useEffect(() => {
              <div
               className={style.review}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -365,7 +371,7 @@ useEffect(() => {
 
           <div className={style.review}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -377,7 +383,7 @@ useEffect(() => {
             </div>
                       <div className={style.review}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -390,7 +396,7 @@ useEffect(() => {
              <div
               className={style.review}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -403,7 +409,7 @@ useEffect(() => {
              <div
               className={style.review}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -416,7 +422,7 @@ useEffect(() => {
              <div
               className={style.review}> 
               <div className={style.imageWrapper}>
-            <span className={style.name}><img src="femaledoc2.jfif" alt="Female Cardiologist" />
+            <span className={style.name}><img src={ process.env.PUBLIC_URL +"/femaledoc2.jfif"} alt="Female Cardiologist" />
                 <h3>Dr. Sara Smith
                 <p>Dermatology</p>
                 </h3></span>
@@ -436,19 +442,19 @@ useEffect(() => {
             <p className={style.para}>More than healthcare a complete, trusted experience.</p>
             <div className={style.why}>
 
-                <div className={`${style.whyitem} ${scrolled2 ? style.whyshow : ''}`} style={{backgroundImage: `url('/clinic.png')`}}>
+                <div className={`${style.whyitem} ${scrolled2 ? style.whyshow : ''}`} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/clinic.png)`}}>
                     <h3>Experienced Medical Team</h3>
                     <p>Certified doctors with years of hands-on experience.</p>
                 </div>
-                <div className={`${style.whyitem} ${scrolled2 ? style.whyshow : ''}`} style={{backgroundImage: `url('/clinic-2.png')`}}>
+                <div className={`${style.whyitem} ${scrolled2 ? style.whyshow : ''}`} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/clinic-2.png)`}}>
                     <h3>Simple Booking & Follow Up</h3>
                     <p>Book your session or ask questions in just a few clicks.</p>
                 </div>
-                <div className={`${style.whyitem} ${scrolled2 ? style.whyshow : ''}`} style={{backgroundImage: `url('/clinic-3.png')`}}>
+                <div className={`${style.whyitem} ${scrolled2 ? style.whyshow : ''}`} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/clinic-3.png)`}}>
                     <h3>Multiple Locations</h3>
                     <p>Easy access across several governorates.</p>
                 </div>
-                <div className={`${style.whyitem} ${scrolled2 ? style.whyshow : ''}`} style={{backgroundImage: `url('/clinic-4.png')`}}>
+                <div className={`${style.whyitem} ${scrolled2 ? style.whyshow : ''}`} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/clinic-4.png)`}}>
                     <h3>Patient Centered Care</h3>
                     <p>We listen. We understand. We care. Your Health Comes First </p>
                 </div>
@@ -474,7 +480,7 @@ className={style.btn3} > Book your nearest branch</button>
   </div>
   
 <div className={style.warr}>
-<img src='/preview.png' className={style.pere}/>
+<img src={ process.env.PUBLIC_URL +'/preview.png'} className={style.pere}/>
         </div>
             </div>
     </section>
