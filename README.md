@@ -3,7 +3,7 @@
 A professional React-based website for **Aurum Clinic** showcasing its services, doctors, and contact information in a modern and responsive design.
 
 ![Preview](public/photo.jpg)
-
+test app Now : [go live now](https://omar-21-wael.github.io/Aurum-Clinic/)
 ---
 
 ## 🚀 Features
